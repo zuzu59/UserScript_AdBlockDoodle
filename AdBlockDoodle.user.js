@@ -3,13 +3,16 @@
 // @namespace   none
 // @description A script to block ads in doodle.com
 // @include     https://doodle.com/*
-// @version     0.3
+// @version     0.4
 // @grant       GM_xmlhttpRequest
 // @grant       GM_addStyle
 // @require     http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
 // @author      EPFL-dojo/zuzu59
 // @downloadURL https://raw.githubusercontent.com/zuzu59/UserScript_AdBlockDoodle/master/AdBlockDoodle.user.js
+// @updateURL   https://raw.githubusercontent.com/zuzu59/UserScript_AdBlockDoodle/master/AdBlockDoodle.user.js
 // ==/UserScript==
+
+// zf200909.1051
 
 // Avoid conflicts
 this.$ = this.jQuery = jQuery.noConflict(true);
@@ -20,7 +23,8 @@ $(document).ready(function() {
   // Remove all iframes and specific ad every 3s
   setInterval(function(){
       $('iframe').remove()
-      $("#af_video_content_1").css( "visibility", "hidden" ).css( "display", "none" );
+      //$("#af_video_content_1").css( "visibility", "hidden" ).css( "display", "none" );
+      $("#d-inlineVideoWallAdContainer").css( "visibility", "hidden" ).css( "display", "none" );
   }, 4000);
 
 
